@@ -1,0 +1,13 @@
+.section {
+  &-title {
+    margin-bottom: 0;
+  }
+  &-subtitle {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #888;
+    margin-bottom: 2rem;
+  }
+}

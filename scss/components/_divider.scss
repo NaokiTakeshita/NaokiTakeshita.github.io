@@ -1,0 +1,75 @@
+.c-divider {
+  display: block;
+  // width: 100%;
+  height: 20px;
+  // background-color: grey;
+  width: 100%;
+  max-width: 1140px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: -20px;
+  // top: -$spacing-lg;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+
+    content: "";
+    background: linear-gradient(
+      to right,
+      transparent 5%,
+      #ff6b6b 25%,
+      transparent 45%,
+      transparent 55%,
+      #ff6b6b 75%,
+      transparent 95%
+    );
+    filter: blur(1px);
+    // flex-grow: 1;
+    top: -$spacing-lg - $spacing-lg;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: $primary-color;
+    left: calc(50% - 10px);
+    border: 2px solid white;
+    filter: blur(1px);
+    top: 0;
+    top: -$spacing-lg - $spacing-lg;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 10px;
+      background-color: $primary-color;
+      left: 0;
+      top: 50%;
+      transform: translate(-250%, -50%);
+      border: 2px solid white;
+      filter: blur(1px);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 10px;
+      background-color: $primary-color;
+      right: 0;
+      top: 50%;
+      transform: translate(250%, -50%);
+      border: 2px solid white;
+      filter: blur(1px);
+    }
+  }
+}

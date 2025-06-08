@@ -1,0 +1,95 @@
+// レスポンシブデザイン用ミックスイン
+// ブレイクポイント
+$breakpoint-ss: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == ss {
+    @media (max-width: $breakpoint-ss) {
+      @content;
+    }
+  }
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+// $breakpoint-sm: 576px;
+// $breakpoint-md: 768px;
+// $breakpoint-lg: 992px;
+// $breakpoint-xl: 1200px;transition
+
+// // フレックスボックスセンタリング
+// @mixin flex-center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// // グリッドレイアウト
+// @mixin grid-layout($columns: 1fr, $gap: $spacing-md) {
+//   display: grid;
+//   grid-template-columns: $columns;
+//   gap: $gap;
+// }
+
+// // ホバーエフェクト
+// @mixin hover-effect {
+//   transition: $transition-base;
+//   &:hover {
+//     transform: translateY(-5px);
+//     box-shadow: $box-shadow;
+//   }
+// }
+
+// // セクションパディング
+// @mixin section-padding {
+//   padding: $spacing-xxl $spacing-lg;
+// }
+
+// // セクションタイトル
+// @mixin section-title {
+//   font-size: 2rem;
+//   margin-bottom: $spacing-sm;
+//   text-align: center;
+//   font-weight: bold;
+// }
+
+// // ボタンプライマリースタイル
+// @mixin button-primary {
+//   display: inline-block;
+//   padding: $spacing-md $spacing-xl;
+//   background: $primary-color;
+//   color: white;
+//   border: none;
+//   border-radius: 30px;
+//   font-weight: bold;
+//   cursor: pointer;
+//   transition: $transition-base;
+
+//   &:hover {
+//     background: darken($primary-color, 10%);
+//     transform: translateY(-3px);
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+//   }
+
+//   &:active {
+//     transform: translateY(-1px);
+//   }
+// }

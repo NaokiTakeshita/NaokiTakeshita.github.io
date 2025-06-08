@@ -1,0 +1,165 @@
+.p-contact {
+  background-color: $background-color-secondary;
+  width: 100%;
+  position: relative;
+
+  &__container {
+    // padding-top: 20px;
+    // padding: 20px 0 20px;
+    // padding: 0 10rem;
+  }
+  &__contentsbox {
+    width: 80%;
+    // margin-top: 50px;
+    margin: 40px auto 0;
+    min-width: 280px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    padding: 2rem 2rem;
+
+    @include respond-to(md) {
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    p {
+      text-align: center;
+      // display: inline-block;
+      margin: 0 auto;
+      line-height: 1.9;
+      color: #292929;
+      position: relative;
+      font-size: 1.05rem;
+    }
+  }
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &__label {
+    font-size: 1rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 8px;
+
+    &--must {
+      &::after {
+        content: "必須";
+        background-color: $primary-color;
+        color: white;
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+        margin-left: 8px;
+        padding: 2px;
+      }
+    }
+  }
+
+  &__textbox {
+    all: unset;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    color: #292929;
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  &__textarea {
+    all: unset;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    color: #292929;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  // &__checkbox {
+  //   all: unset;
+  //   display: block;
+  //   border-radius: 5px;
+  //   border: 1px solid #aaa;
+  //   padding: 8px;
+  //   width: 100%;
+  //   margin-bottom: 1.5rem;
+  // }
+}
+.p-contact__checkbox-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.p-contact__checkbox {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.p-contact__checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+  color: #292929;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.p-contact__checkbox-mark {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #999;
+  border-radius: 0.25rem;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(30deg) scale(0);
+    top: 1px;
+    left: 4px;
+    transition: transform 0.2s ease;
+  }
+}
+
+// チェック状態のスタイル
+.p-contact__checkbox:checked
+  + .p-contact__checkbox-label
+  .p-contact__checkbox-mark {
+  background-color: $primary-color;
+
+  &::after {
+    transform: rotate(30deg) scale(1);
+  }
+}

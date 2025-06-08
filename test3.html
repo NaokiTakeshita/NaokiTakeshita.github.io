@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Saira+Extra+Condensed:wght@300&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./leaf_memo/assets/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        /* background-color: #fff; */
+      }
+
+      #container {
+        position: fixed;
+        touch-action: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="container"
+      touch-action="none"
+      style="position: absolute; z-index: 100; top: 0; opacity: 1"
+    ></div>
+    <script src="./pooleffect.js"></script>
+  </body>
+</html>

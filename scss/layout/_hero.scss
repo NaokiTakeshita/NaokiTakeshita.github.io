@@ -1,0 +1,280 @@
+// ヒーローセクションのスタイル
+
+$screensize: 1200px;
+@function vw($size, $viewport: $screensize) {
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
+}
+
+.l-hero {
+  // height: 100vh;
+  // height: 100dvh; /* 未対応機種へのフォールバック */
+  background-color: $background-color-primary;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  // padding-top: 80px;
+
+  &__container {
+    width: 90%;
+    max-width: $inner-width;
+    background-color: $background-color-primary;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    // margin: 0 auto;
+    margin: 0px auto 00px;
+    gap: 16px;
+  }
+  &__service-list {
+    margin-bottom: 16px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+      li {
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius: 9999px;
+        padding: 8px 24px;
+      }
+
+      @include respond-to(lg) {
+        gap: 16px;
+        li {
+          font-size: 1.2rem;
+        }
+      }
+      @include respond-to(md) {
+        gap: 12px;
+        li {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  &__contents {
+    width: 100%;
+    z-index: 10;
+
+    h1 {
+      // display: inline-block;
+      // font-family: "Noto Sans JP", sans-serif; // 和文と欧文を統一
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN";
+      font-size: 3.5rem;
+      text-align: center;
+
+      // @include respond-to(lg) {
+      //   font-size: 3rem;
+      // }
+
+      @include respond-to(lg) {
+        font-size: 2.5rem;
+      }
+
+      @include respond-to(sm) {
+        font-size: vw(40px, 576px);
+      }
+
+      span {
+        &.jp {
+          font-size: 2em;
+          font-weight: 600;
+          margin-right: 8px;
+        }
+        &.en {
+          font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN";
+          display: inline-block;
+          font-size: 2.4em;
+          $scale-ratio: 1.25;
+          // transform: scaleX($scale-ratio) scaleY($scale-ratio)
+          //   translateY(-0.02em);
+          transform: translateY(0.05em);
+          letter-spacing: -0.05em;
+          // margin-right: 0.35em;
+          font-weight: 600;
+          margin-right: 8px;
+        }
+        &.small {
+          display: inline-block;
+          margin-right: 0;
+          font-size: 1em;
+          transform: translateY(0.05em);
+
+          @include respond-to(md) {
+            display: block; // ← md以下で改行される
+          }
+        }
+      }
+    }
+
+    &-msg {
+      display: block;
+      text-align: center;
+      color: #aaa;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+      // text-shadow: 1 1 4px rgba(255, 255, 255, 0.8);
+      @include respond-to(lg) {
+        font-size: 1rem;
+      }
+    }
+
+    &__services {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        padding: 20px;
+        padding-left: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: 700;
+
+        &::before {
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 0;
+          width: 8px;
+          height: 100%;
+          border-radius: 15px;
+          z-index: 10;
+
+          background-color: $primary-color;
+        }
+      }
+      // element.style {
+      // }
+      // .hero-service-card {
+      //     background-color: white;
+      //     border-radius: 15px;
+      //     padding: 20px;
+      //     padding-left: 25px;
+      //     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      //     transition: all 0.5s ease;
+      //     position: relative;
+      //     overflow: hidden;
+      //     transform: perspective(1000px) rotateY(0);
+      //     transform-style: preserve-3d;
+      //       }
+    }
+  }
+  &__accent {
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+    // left: 50%;
+    // bottom: 0;
+    // z-index: 1;
+    position: relative;
+    // background-color: grey;
+
+    &__container {
+      position: relative;
+      // top: 0;
+      // right: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      padding-top: 16px;
+
+      &__blob {
+        $blob-base-size: 400px;
+        // filter: blur(2px);
+        width: vw($blob-base-size);
+        height: vw($blob-base-size);
+        max-width: $blob-base-size;
+        max-height: $blob-base-size;
+        background: linear-gradient(to right, $blob-color-1, $blob-color-2);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        // animation: blob-animation 15s ease-in-out infinite alternate,
+        //   blob-rotate 60s linear infinite;
+        opacity: 0.7;
+        position: relative;
+        // right: 0;
+        // top: 50%;
+        // box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        // transform: translateY(-50%);
+        // animation: blob-animation 15s ease-in-out infinite alternate;
+        animation: blob-animation 15s ease-in-out alternate;
+        animation-iteration-count: 4;
+        animation-fill-mode: forwards;
+      }
+
+      &__title {
+        $blobtext-base-size: 40px;
+
+        display: block;
+        position: absolute;
+        // width: 100%;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: min(vw($blobtext-base-size), $blobtext-base-size);
+
+        letter-spacing: -1px;
+        font-weight: 700;
+        color: white;
+        // text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+
+        span {
+          display: block; // ← blockだと幅が100%になるので inline-blockに
+          text-align: center;
+          white-space: nowrap; // ← 改行を防ぐ
+        }
+      }
+      &__footer {
+        position: absolute;
+        bottom: 0;
+        color: #000;
+        opacity: 0.5;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+
+        span {
+          white-space: pre;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blob-animation {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 50% 50% 40% 60% / 40% 50% 60% 50%;
+  }
+}

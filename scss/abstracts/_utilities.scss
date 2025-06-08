@@ -1,0 +1,153 @@
+// ユーティリティクラス
+
+// テキスト配置
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// マージン
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+.mt-md {
+  margin-top: $spacing-md;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
+.mt-xl {
+  margin-top: $spacing-xl;
+}
+
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+.mb-xl {
+  margin-bottom: $spacing-xl;
+}
+
+// パディング
+.pt-sm {
+  padding-top: $spacing-sm;
+}
+.pt-md {
+  padding-top: $spacing-md;
+}
+.pt-lg {
+  padding-top: $spacing-lg;
+}
+.pt-xl {
+  padding-top: $spacing-xl;
+}
+
+.pb-sm {
+  padding-bottom: $spacing-sm;
+}
+.pb-md {
+  padding-bottom: $spacing-md;
+}
+.pb-lg {
+  padding-bottom: $spacing-lg;
+}
+.pb-xl {
+  padding-bottom: $spacing-xl;
+}
+
+// 表示・非表示
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+// フレックスボックス
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+// コンテナ
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-lg; //2rem
+
+  &-ptb {
+    padding: calc($spacing-lg * 2) calc($spacing-lg * 1);
+  }
+  &-plr {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &-mdfull {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// レスポンシブユーティリティ
+@include respond-to(md) {
+  .hidden-md {
+    display: none;
+  }
+
+  .visible-md {
+    display: block;
+  }
+}
+
+@include respond-to(sm) {
+  .hidden-sm {
+    display: none;
+  }
+
+  .visible-sm {
+    display: block;
+  }
+}
+
+.emptybox {
+  display: block;
+  width: 100%;
+  height: 100px;
+}

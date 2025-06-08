@@ -1,0 +1,68 @@
+// 色の変数
+// 元のCSSの変数と一致するように修正
+$primary-color: #ff6b6b;
+$secondary-color: #fff1ee;
+$text-color: #292929;
+
+$background-color-primary: #fffaf2;
+
+$background-color-secondary: #fff4e5;
+// $background-color-primary: #fef8f4;
+// $background-color-secondary: black;
+$background-color-tertiary: black;
+
+$background-color-items: white;
+// rgba(255, 216, 216, 0.4);
+$light-bg: #f8f9fa;
+$gradient-primary: linear-gradient(90deg, $primary-color, #181717);
+$accent-color: #fe5126;
+
+$blob-color-1: #ff6b6b;
+$blob-color-2: #ff9e7d;
+
+// $primary-color: black;
+// $accent-color: black;
+
+// $primary-color: #ff6b6b;
+// $secondary-color: #f5a623;
+// $text-color: #292929;
+// $background-color-primary: #fef8f4;
+// $background-color-secondary: rgb(253 244 244);
+// $background-color-tertiary: rgba(255, 216, 216, 0.4);
+// // rgba(255, 216, 216, 0.4);
+// $light-bg: #f8f9fa;
+// $gradient-primary: linear-gradient(90deg, $primary-color, #ffa07a);
+// $accent-color: #ff9e7d;
+
+// その他の変数も確認
+// $font-family-base: "Helvetica Neue", Arial, sans-serif;
+// $line-height-base: 1.6;
+
+// フォント
+$font-family-base: "Roboto", "Helvetica Neue", Helvetica, Arial, "Noto Sans JP",
+  "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// スペーシング
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+$spacing-xxl: 5rem;
+$spacing-xs: 1rem;
+
+// ブレイクポイント
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// その他
+$border-radius: 15px;
+$box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+$transition-base: all 0.3s ease;
+$header-height: 80px;
+$header-height-compact: 60px;
+
+$inner-width: 1140px;

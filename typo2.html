@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAOKI TAKESHITA PORTFOLIO</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
+    <!--  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!--  -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div
+      id="container"
+      touch-action="none"
+      style="position: fixed; z-index: 0; top: 0; opacity: 1"
+    ></div>
+    <div class="l-wrapper">
+      <section class="page">
+        <div class="box">
+          <h1>NAOKI TAKESHITA PORTFOLIO</h1>
+          <h2>
+            I work as a:
+            <div class="text-wrapper">
+              <p class="text">- Web Designer.</p>
+              <p class="text">- Programmer.</p>
+              <p class="text">- Doctor.</p>
+            </div>
+          </h2>
+        </div>
+      </section>
+      <!--  -->
+      <section class="page l-about">
+        <div class="l-about__container">
+          <div class="l-about__contents">
+            <h1>- About -</h1>
+            <p>
+              小児科医として診療に従事してきましたが、家族のサポートが必要となったことを機に、働き方を非常勤へと見直しました。
+            </p>
+            <p>
+              医療現場では「思いを汲み取ること」「分かりやすく伝えること」を大切にしてきました。その姿勢はWeb制作でも変わりません。ユーザー目線で、伝わりやすく使いやすい設計・実装を心がけています。
+            </p>
+            <p>
+              若い頃からデザインやコードに親しみ、論理性と創造性を活かした制作を得意としています。「医師
+              × デザイナー ×
+              エンジニア」という視点で、丁寧に誠実に、誰かの役に立つ仕事を続けていきたいと考えています。
+            </p>
+            <h1>- Skills -</h1>
+            <ul>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>Swift</li>
+              <li>C#</li>
+              <li>Python</li>
+              <li>React</li>
+              <li>Flutter</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+              <li>PHP</li>
+              <li>WordPress</li>
+            </ul>
+          </div>
+          <div class="l-about__img"><img src="./aboutme.png" alt="" /></div>
+        </div>
+      </section>
+      <!--  -->
+      <section class="page l-works">
+        <div class="l-works__container">
+          <div class="l-works__contents">
+            <h1>- Works & Publications -</h1>
+            <div class="l-works__card">
+              <div class="l-works__img">
+                <img src="./assets/img/icon.png" alt="" />
+              </div>
+              <div class="l-works__text">
+                <div class="l-works__cardtitle">
+                  <h2>Acto3D</h2>
+                  <ul>
+                    <li>Swift</li>
+                    <li>Metal</li>
+                    <li>Python</li>
+                  </ul>
+                  <a href="https://acto3d.github.io/" target="_blank">
+                    詳細をみる
+                    <div class="arrow-button"></div>
+                  </a>
+                </div>
+
+                <p>
+                  研究用ハイクラスボリュームレンダリングソフトウェア<br />蛍光顕微鏡で撮像した数十GBに及ぶマルチチャンネル16bit画像をMacbookで高速にVolume
+                  renderingを可能とするソフトウェア。Vertex/Fragment
+                  shaderを一切使わず、Compute
+                  shaderの演算のみで描画しており計算過程の透明性を確保している。<br />
+                  国際的な生物系科学雑誌であるDevelopment誌の表紙を飾った。
+                </p>
+              </div>
+            </div>
+            <div class="l-works__card">
+              <div class="l-works__img">
+                <img src="./assets/img/leafmemo.webp" alt="" />
+              </div>
+              <div class="l-works__text">
+                <div class="l-works__cardtitle">
+                  <h2>ハッパメモ</h2>
+                  <ul>
+                    <li>React Native</li>
+                    <li>Expo</li>
+                    <li>Swift</li>
+                    <li>Kotlin</li>
+                  </ul>
+                  <a href="./leaf_memo/index.html" target="_blank">
+                    詳細をみる
+                    <div class="arrow-button"></div>
+                  </a>
+                </div>
+
+                <p>
+                  家庭菜園用スマホアプリ。日々の植物の成長を写真におさめながら、成長を楽しめる。<br />撮りためた写真はパラパラ漫画のようにタイムラプスにして共有することができる。
+                </p>
+              </div>
+            </div>
+            <div class="l-works__card">
+              <div class="l-works__img roundrect">
+                <img src="./assets/img/128x128.png" alt="" />
+              </div>
+              <div class="l-works__text">
+                <div class="l-works__cardtitle">
+                  <h2>Catheter Volumetry</h2>
+                  <ul>
+                    <li>C#</li>
+                  </ul>
+                </div>
+
+                <p>
+                  小児の心臓カテーテル検査における左右心室容積の計算ソフトウェア。DICOM画像を読み込まずとも、画面上に表示された検査動画上にオーバーレイウィンドウを表示することで造影画像をトレースできるようにした。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="page l-about"
+        style="background-color: rgba(0, 0, 0, 0.3)"
+      >
+        <div class="l-about__container">
+          <div class="l-about__contents">
+            <h1>- Contact -</h1>
+            <h3 style="font-size: 2rem">MAIL</h3>
+            <p>
+              <a href="mailto:n.takeshita.x@gmail.com">
+                n.takeshita.x@gmail.com
+              </a>
+            </p>
+            <h3 style="font-size: 2rem">Github</h3>
+            <p>
+              <a href="https://github.com/NaokiTakeshita" target="_blank"
+                >https://github.com/NaokiTakeshita</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./pooleffect.js"></script>
+    <script>
+      const texts = document.querySelectorAll(".text");
+      texts.forEach((text) => prepareText(text));
+
+      let current = 0;
+
+      function prepareText(p) {
+        const textContent = p.textContent;
+        p.innerHTML = "";
+        for (let char of textContent) {
+          const span = document.createElement("span");
+          span.textContent = char;
+          p.appendChild(span);
+        }
+      }
+
+      // texts[1].classList.add("hidden");
+      // texts[2].classList.add("hidden");
+      // texts[3].classList.add("hidden");
+      prepareText(texts[0]);
+
+      // WEB DESIGNER
+      // if (uniforms && uniforms.u_stage) {
+      //   uniforms.u_stage.value = 0.0;
+      // }
+
+      animateText(texts[0], 120, 3500, 0, () => {
+        // 1行目の表示が終わったらwave表示
+        uniforms.u_wave_timing.value = 1.0;
+
+        // 500msだけ表示
+        setTimeout(() => {
+          uniforms.u_wave_timing.value = 1.5;
+
+          animateStageTransition(0.0, 1.0, 2500); // c1 → c2 にフェード
+        }, 500);
+
+        setTimeout(() => {
+          animateText(texts[1], 120, 3500, 0, () => {
+            setTimeout(() => {
+              uniforms.u_wave_timing.value = 2.0;
+            }, 2500);
+
+            setTimeout(() => {
+              // 500msだけ表示
+              setTimeout(() => {
+                uniforms.u_wave_timing.value = 2.5;
+
+                animateStageTransition(1.0, 2.0, 2500); // c2 → c3 にフェード
+              }, 500);
+              // animateStageTransition(1.0, 2.0, 2500); // c2 → c3 にフェード
+              // texts[2].classList.remove("hidden");
+              // prepareText(texts[2]);
+              animateText(texts[2], 120, 3500, 0, () => {
+                // texts[2].classList.add("hidden");
+
+                // also を非表示に戻す
+                document.querySelectorAll(".reveal").forEach((span) => {
+                  span.classList.remove("show");
+                });
+              });
+            }, 3500);
+          });
+        }, 3500);
+      });
+
+      function animateStageTransition(from, to, duration = 1000) {
+        const start = performance.now();
+        const startStage = from;
+
+        function update(now) {
+          const t = (now - start) / duration;
+          if (t < 1.0) {
+            uniforms.u_stage.value = startStage + t;
+            requestAnimationFrame(update);
+          } else {
+            uniforms.u_stage.value = to;
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      function animateText(
+        p,
+        showSpeed = 100,
+        waitBeforeRewind = 1000,
+        rewindSpeed = 40,
+        onComplete
+      ) {
+        const spans = p.querySelectorAll("span");
+        let index = 0;
+
+        const forward = setInterval(() => {
+          if (index < spans.length) {
+            spans[index].classList.add("active");
+            index += 1;
+          } else {
+            clearInterval(forward);
+
+            if (rewindSpeed === 0) {
+              if (onComplete) onComplete(); // ← 名前表示後に何か処理したい場合
+              return; // ← 巻き戻しせず終了
+            }
+
+            setTimeout(() => {
+              let revIndex = index - 1;
+              const backward = setInterval(() => {
+                if (revIndex >= 0) {
+                  spans[revIndex].classList.remove("active");
+                  revIndex -= 1;
+                } else {
+                  clearInterval(backward);
+                  if (onComplete) onComplete();
+                }
+              }, rewindSpeed);
+            }, waitBeforeRewind);
+          }
+        }, showSpeed);
+      }
+    </script>
+    <script>
+      const pages = Array.from(document.querySelectorAll(".page"));
+      let isAutoScrolling = false;
+
+      let currentPageIndex = 0;
+
+      window.addEventListener("wheel", (e) => {
+        if (isAutoScrolling) return;
+
+        const delta = e.deltaY;
+
+        if (Math.abs(delta) < 10) return; // 軽微なスクロールは無視
+
+        if (delta > 0 && currentPageIndex < pages.length - 1) {
+          currentPageIndex++;
+          scrollToPage(currentPageIndex);
+        } else if (delta < 0 && currentPageIndex > 0) {
+          currentPageIndex--;
+          scrollToPage(currentPageIndex);
+        }
+      });
+
+      function scrollToPage(index) {
+        isAutoScrolling = true;
+        pages[index].scrollIntoView({ behavior: "smooth" });
+
+        setTimeout(() => {
+          isAutoScrolling = false;
+        }, 1000); // アニメーション中は無視
+      }
+
+      let touchStartY = 0;
+      let touchEndY = 0;
+
+      const threshold = 10; // これ以上動いたらスナップ
+
+      document.addEventListener("touchstart", (e) => {
+        if (e.touches.length === 1) {
+          touchStartY = e.touches[0].clientY;
+        }
+      });
+
+      document.addEventListener("touchend", (e) => {
+        if (isAutoScrolling) return;
+
+        touchEndY = e.changedTouches[0].clientY;
+        const delta = touchStartY - touchEndY;
+
+        if (Math.abs(delta) < threshold) return;
+
+        if (delta > 0 && currentPageIndex < pages.length - 1) {
+          // 下方向にスワイプ
+          currentPageIndex++;
+          scrollToPage(currentPageIndex);
+        } else if (delta < 0 && currentPageIndex > 0) {
+          // 上方向にスワイプ
+          currentPageIndex--;
+          scrollToPage(currentPageIndex);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+// アニメーション定義
+
+// フェードイン
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// 上からフェードイン
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 下からフェードイン
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 拡大アニメーション
+@keyframes scale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// アニメーション用ミックスイン
+@mixin animate($animation, $duration: 0.5s, $delay: 0s, $fill-mode: forwards) {
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: $fill-mode;
+}
+
+// アニメーション適用クラス
+.fade-in {
+  @include animate(fadeIn);
+}
+
+.fade-in-down {
+  @include animate(fadeInDown);
+}
+
+.fade-in-up {
+  @include animate(fadeInUp);
+}
+
+.scale-in {
+  @include animate(scale);
+}
