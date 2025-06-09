@@ -56,7 +56,7 @@ const float power = 10.1;
 // blur constants
 const float blurMultiplier = 0.95;
 const float blurStrength = 2.98;
-const int samples = 8;
+const int samples = 4; // default 8
 const float sigma = float(samples) * 0.25;
 
 vec2 hash2(vec2 p)

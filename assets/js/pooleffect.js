@@ -101,7 +101,7 @@ let camera, scene, renderer;
 let uniforms;
 
 let divisor = 1 / 8;
-let textureFraction = 1 / 1;
+let textureFraction = 1.0 / 1.0;
 
 let newmouse = {
   x: 0,
@@ -158,7 +158,11 @@ function init(vertexShaderCode, fragmentShaderCode) {
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
-  renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: false,
+    powerPreference: "high-performance",
+  });
   container.appendChild(renderer.domElement);
 
   onWindowResize();
