@@ -305,10 +305,13 @@ body {
   display: inline-flex;
   flex-wrap: wrap;
   row-gap: 8px;
+  gap: 16px;
+  margin-left: 20px;
 }
 @media (max-width: 768px) {
   .l-about__contents ul {
     justify-content: center;
+    margin-left: 0;
   }
 }
 .l-about__contents ul li {
@@ -317,7 +320,7 @@ body {
   padding: 4px 12px;
   border-radius: 41px;
   outline: 1px solid #fff;
-  margin-right: 16px;
+  margin: 0;
   white-space: nowrap;
 }
 .l-about__img {

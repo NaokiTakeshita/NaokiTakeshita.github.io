@@ -67,7 +67,9 @@
               <li>WordPress</li>
             </ul>
           </div>
-          <div class="l-about__img"><img src="./aboutme.png" alt="" /></div>
+          <div class="l-about__img">
+            <img src="./assets/img/aboutme.webp" alt="" />
+          </div>
         </div>
       </section>
       <!--  -->
@@ -170,7 +172,6 @@
       </section>
     </div>
 
-    <script src="./pooleffect.js"></script>
     <script>
       const texts = document.querySelectorAll(".text");
       texts.forEach((text) => prepareText(text));
@@ -197,45 +198,49 @@
       //   uniforms.u_stage.value = 0.0;
       // }
 
-      animateText(texts[0], 120, 3500, 0, () => {
-        // 1行目の表示が終わったらwave表示
-        uniforms.u_wave_timing.value = 1.0;
-
-        // 500msだけ表示
+      function startAnimation() {
         setTimeout(() => {
-          uniforms.u_wave_timing.value = 1.5;
+          animateText(texts[0], 120, 3500, 0, () => {
+            // 1行目の表示が終わったらwave表示
+            uniforms.u_wave_timing.value = 1.0;
 
-          animateStageTransition(0.0, 1.0, 2500); // c1 → c2 にフェード
-        }, 500);
-
-        setTimeout(() => {
-          animateText(texts[1], 120, 3500, 0, () => {
+            // 500msだけ表示
             setTimeout(() => {
-              uniforms.u_wave_timing.value = 2.0;
-            }, 2500);
+              uniforms.u_wave_timing.value = 1.5;
+
+              animateStageTransition(0.0, 1.0, 2500); // c1 → c2 にフェード
+            }, 500);
 
             setTimeout(() => {
-              // 500msだけ表示
-              setTimeout(() => {
-                uniforms.u_wave_timing.value = 2.5;
+              animateText(texts[1], 120, 3500, 0, () => {
+                setTimeout(() => {
+                  uniforms.u_wave_timing.value = 2.0;
+                }, 2500);
 
-                animateStageTransition(1.0, 2.0, 2500); // c2 → c3 にフェード
-              }, 500);
-              // animateStageTransition(1.0, 2.0, 2500); // c2 → c3 にフェード
-              // texts[2].classList.remove("hidden");
-              // prepareText(texts[2]);
-              animateText(texts[2], 120, 3500, 0, () => {
-                // texts[2].classList.add("hidden");
+                setTimeout(() => {
+                  // 500msだけ表示
+                  setTimeout(() => {
+                    uniforms.u_wave_timing.value = 2.5;
 
-                // also を非表示に戻す
-                document.querySelectorAll(".reveal").forEach((span) => {
-                  span.classList.remove("show");
-                });
+                    animateStageTransition(1.0, 2.0, 2500); // c2 → c3 にフェード
+                  }, 500);
+                  // animateStageTransition(1.0, 2.0, 2500); // c2 → c3 にフェード
+                  // texts[2].classList.remove("hidden");
+                  // prepareText(texts[2]);
+                  animateText(texts[2], 120, 3500, 0, () => {
+                    // texts[2].classList.add("hidden");
+
+                    // also を非表示に戻す
+                    document.querySelectorAll(".reveal").forEach((span) => {
+                      span.classList.remove("show");
+                    });
+                  });
+                }, 3500);
               });
             }, 3500);
           });
-        }, 3500);
-      });
+        }, 1500);
+      }
 
       function animateStageTransition(from, to, duration = 1000) {
         const start = performance.now();
@@ -292,6 +297,8 @@
         }, showSpeed);
       }
     </script>
+
+    <script src="./assets/js/pooleffect.js"></script>
     <script>
       const pages = Array.from(document.querySelectorAll(".page"));
       let isAutoScrolling = false;

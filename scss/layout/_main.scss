@@ -96,13 +96,17 @@ body {
     }
     @include respond-to(“ss”) {
     }
+
     ul {
       display: inline-flex;
       flex-wrap: wrap;
       row-gap: 8px; // ← ここで行間を指定
+      gap: 16px;
+      margin-left: 20px;
       //   justify-content: center;
       @include respond-to("md") {
         justify-content: center;
+        margin-left: 0;
       }
 
       li {
@@ -111,7 +115,7 @@ body {
         padding: 4px 12px;
         border-radius: 41px;
         outline: 1px solid #fff;
-        margin-right: 16px;
+        margin: 0;
         white-space: nowrap;
       }
     }

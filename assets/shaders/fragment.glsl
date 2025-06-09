@@ -143,10 +143,10 @@ vec4 renderRipples() {
   //
   if (u_wave_timing == 1.0) {
     float radius = 0.02 + abs(sin(u_time * 10.0) * 0.006);
-    shade = smoothstep(radius, 0.0, length(uv + vec2(-0.3, 0.0))); // 中央（uv = 0）から波紋
+    shade = smoothstep(radius, 0.0, length(uv + vec2(sin(u_time * 2.0), cos(u_time)) / 5.0 + vec2(-0.3, 0.0))); // 中央（uv = 0）から波紋
   }else if (u_wave_timing == 2.0) {
     float radius = 0.02 + abs(sin(u_time * 10.0) * 0.006);
-    shade = smoothstep(radius, 0.0, length(uv + vec2(-0.3, 0.0))); // 中央（uv = 0）から波紋
+    shade = smoothstep(radius, 0.0, length(uv + vec2(sin(u_time * 2.0), cos(u_time)) / 5.0 + vec2(0.3, 0.0))); // 中央（uv = 0）から波紋
   }
   
   //

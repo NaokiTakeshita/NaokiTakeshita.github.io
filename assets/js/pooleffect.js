@@ -11,8 +11,16 @@ let loader = new THREE.TextureLoader();
 const isMobile = window.innerWidth < 768;
 
 const imageSet = isMobile
-  ? ["./myimg_sp1.png", "./myimg_sp2.png", "./myimg_sp3.png"]
-  : ["./myimg5.png", "./myimg7.png", "./myimg8.png"];
+  ? [
+      "./assets/img/hero/myimg_sp1.webp",
+      "./assets/img/hero/myimg_sp2.webp",
+      "./assets/img/hero/myimg_sp3.webp",
+    ]
+  : [
+      "./assets/img/hero/myimg5.webp",
+      "./assets/img/hero/myimg7.webp",
+      "./assets/img/hero/myimg8.webp",
+    ];
 
 async function loadShader(path) {
   const response = await fetch(path);
@@ -22,16 +30,16 @@ async function loadShader(path) {
   return await response.text();
 }
 Promise.all([
-  loadShader("./shaders/vertex.glsl"),
-  loadShader("./shaders/fragment.glsl"),
+  loadShader("./assets/shaders/vertex.glsl"),
+  loadShader("./assets/shaders/fragment.glsl"),
 ]).then(([vertexShaderCode, fragmentShaderCode]) => {
-  loader.load("./noise.png", (tex) => {
+  loader.load("./assets/img/noise.webp", (tex) => {
     texture = tex;
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.minFilter = THREE.LinearFilter;
 
-    loader.load("./noise.png", function environment_load(tex) {
+    loader.load("./assets/img/noise.webp", function environment_load(tex) {
       environment = tex;
       //   environment.wrapS = THREE.RepeatWrapping;
       //   environment.wrapT = THREE.RepeatWrapping;
@@ -77,6 +85,8 @@ Promise.all([
             pooltex3.generateMipmaps = false;
 
             // 👇 シェーダーを渡して初期化
+            console.log("texture set");
+            startAnimation();
             init(vertexShaderCode, fragmentShaderCode);
             animate();
           });
@@ -275,8 +285,16 @@ function onWindowResize(event) {
   // 🔽 テクスチャ画像を再ロード（768px未満と以上で切替）
   const isMobile = window.innerWidth < 768;
   const imageSet = isMobile
-    ? ["./myimg_sp1.png", "./myimg_sp2.png", "./myimg_sp3.png"]
-    : ["./myimg5.png", "./myimg7.png", "./myimg8.png"];
+    ? [
+        "./assets/img/hero/myimg_sp1.webp",
+        "./assets/img/hero/myimg_sp2.webp",
+        "./assets/img/hero/myimg_sp3.webp",
+      ]
+    : [
+        "./assets/img/hero/myimg5.webp",
+        "./assets/img/hero/myimg7.webp",
+        "./assets/img/hero/myimg8.webp",
+      ];
 
   console.log("reload texture");
   const loader = new THREE.TextureLoader();
