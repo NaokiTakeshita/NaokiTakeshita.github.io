@@ -32,6 +32,15 @@ body {
   position: relative;
 }
 
+.changelng {
+  color: white;
+  margin-right: 8px;
+  text-decoration: none;
+}
+.changelng:hover {
+  opacity: 0.8;
+}
+
 .screen-image1 {
   position: absolute;
   background-image: url("./mockup.webp");
