@@ -130,6 +130,7 @@ body {
     img {
       display: block;
       width: 100%;
+      border-radius: 24px;
     }
 
     @include respond-to("lg") {
@@ -188,7 +189,11 @@ body {
   width: 100%;
   color: white;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.6);
+  // background-color: rgba(0, 0, 0, 1);
+  background: url("../img/bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   //   padding-left: 40px;
   padding: 40px;
   @include respond-to("md") {
@@ -199,6 +204,11 @@ body {
   }
   @include respond-to("ss") {
     padding: 20px;
+  }
+
+  span {
+    color: #00ff89;
+    font-weight: 700;
   }
 
   &__container {

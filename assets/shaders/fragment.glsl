@@ -257,7 +257,6 @@ vec4 renderPass(vec2 uv, inout float distortion) {
   fy = (fy - f) / sampleDistance.x;
   normal = normalize(normal + vec3(fx, fy, 0) * 0.2);
   
-  // Holy fuck balls, fresnel!
   // specular = max(0.0, min(1.0, bias + scale * (1.0 + length(camPos-sp * surfNormal)) * power));
   float shade = bias + (scale * pow(1.0 + dot(normalize(surfacePos - vec3(uv, - 3.0)), normal), power));
   
@@ -280,7 +279,6 @@ vec4 renderPass(vec2 uv, inout float distortion) {
   // vec3 tex = texture2D(u_environment, (reflect(vec3(uv, - 1.0), normal)).xy).rgb;
   vec3 reflect_ray = reflect(vec3(uv, 1.0), normal * 1.0);
   // The reflect ray is the ray wwe use to determine the reflection.
-  // We use the UV less the movement (to account for "environment") to the surface normal
   
   vec3 tex = vec3(0.5) - (shade + 0.5);
   // 環境を無効
@@ -388,7 +386,7 @@ void main() {
     //fragcolour = c * c * c * .4;
     //     fragcolour = c * 0.9 + 0.1 ; // 元のテクスチャをほぼそのまま使う
     
-    fragcolour = pow(c, vec4(1.2)) * 1.2;
+    fragcolour = pow(c, vec4(1.2)) * 1.1;
     fragcolour *= fragcolour;
     fragcolour += (texture2D(u_buffer, sample + 0.03).x) * 0.1 - 0.1;
     fragcolour += reflections * 0.77;

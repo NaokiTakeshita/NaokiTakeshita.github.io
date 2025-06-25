@@ -1,25 +1,17 @@
-/*
-Most of the stuff in here is just bootstrapping. Essentially it's just
-setting ThreeJS up so that it renders a flat surface upon which to draw 
-the shader. The only thing to see here really is the uniforms sent to 
-the shader. Apart from that all of the magic happens in the HTML view
-under the fragment shader.
-*/
-// 🔧 これを .then の外側・上部に書く
 let loader = new THREE.TextureLoader();
 
 const isMobile = window.innerWidth < 768;
 
 const imageSet = isMobile
   ? [
-      "./assets/img/hero/myimg_sp1.webp",
-      "./assets/img/hero/myimg_sp2.webp",
+      "./assets/img/hero/myimg_sp4.webp",
+      "./assets/img/hero/myimg_sp5.webp",
       "./assets/img/hero/myimg_sp3.webp",
     ]
   : [
-      "./assets/img/hero/myimg5.webp",
-      "./assets/img/hero/myimg7.webp",
-      "./assets/img/hero/myimg8.webp",
+      "./assets/img/hero/myimg1.webp",
+      "./assets/img/hero/myimg4.webp",
+      "./assets/img/hero/myimg2.webp",
     ];
 
 async function loadShader(path) {
@@ -191,89 +183,11 @@ function init(vertexShaderCode, fragmentShaderCode) {
   });
 }
 
-// function init() {
-//   container = document.getElementById("container");
-
-//   camera = new THREE.Camera();
-//   camera.position.z = 1;
-
-//   scene = new THREE.Scene();
-
-//   var geometry = new THREE.PlaneBufferGeometry(2, 2);
-
-//   rtTexture = new THREE.WebGLRenderTarget(
-//     Math.floor(window.innerWidth * textureFraction),
-//     Math.floor(window.innerHeight * textureFraction),
-//     { type: THREE.FloatType, minFilter: THREE.NearestMipMapNearestFilter }
-//   );
-//   rtTexture2 = new THREE.WebGLRenderTarget(
-//     Math.floor(window.innerWidth * textureFraction),
-//     Math.floor(window.innerHeight * textureFraction),
-//     { type: THREE.FloatType, minFilter: THREE.NearestMipMapNearestFilter }
-//   );
-
-//   uniforms = {
-//     u_time: { type: "f", value: 1.0 },
-//     u_resolution: { type: "v2", value: new THREE.Vector2() },
-//     u_noise: { type: "t", value: texture },
-//     u_buffer: { type: "t", value: rtTexture.texture },
-//     u_texture: { type: "t", value: pooltex },
-//     u_environment: { type: "t", value: environment },
-//     u_mouse: { type: "v3", value: new THREE.Vector3() },
-//     u_frame: { type: "i", value: -1 },
-//     u_renderpass: { type: "b", value: false },
-//   };
-
-//   var material = new THREE.ShaderMaterial({
-//     uniforms: uniforms,
-//     vertexShader: document.getElementById("vertexShader").textContent,
-//     fragmentShader: document.getElementById("fragmentShader").textContent,
-//   });
-//   material.extensions.derivatives = true;
-
-//   var mesh = new THREE.Mesh(geometry, material);
-//   scene.add(mesh);
-
-//   renderer = new THREE.WebGLRenderer();
-//   // renderer.setPixelRatio( window.devicePixelRatio );
-
-//   container.appendChild(renderer.domElement);
-
-//   onWindowResize();
-//   window.addEventListener("resize", onWindowResize, false);
-
-//   document.addEventListener("pointermove", (e) => {
-//     let ratio = window.innerHeight / window.innerWidth;
-//     if (window.innerHeight > window.innerWidth) {
-//       newmouse.x = (e.pageX - window.innerWidth / 2) / window.innerWidth;
-//       newmouse.y =
-//         ((e.pageY - window.innerHeight / 2) / window.innerHeight) * -1 * ratio;
-//     } else {
-//       newmouse.x =
-//         (e.pageX - window.innerWidth / 2) / window.innerWidth / ratio;
-//       newmouse.y =
-//         ((e.pageY - window.innerHeight / 2) / window.innerHeight) * -1;
-//     }
-
-//     e.preventDefault();
-//   });
-//   document.addEventListener("pointerdown", () => {
-//     uniforms.u_mouse.value.z = 1;
-//   });
-//   document.addEventListener("pointerup", () => {
-//     uniforms.u_mouse.value.z = 0;
-//   });
-// }
-
 function onWindowResize(event) {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
   uniforms.u_resolution.value.x = renderer.domElement.width;
   uniforms.u_resolution.value.y = renderer.domElement.height;
-
-  // console.log(
-  //   `window ${uniforms.u_resolution.value.x},${uniforms.u_resolution.value.y}`
-  // );
 
   rtTexture = new THREE.WebGLRenderTarget(
     window.innerWidth * textureFraction,
@@ -286,18 +200,18 @@ function onWindowResize(event) {
 
   uniforms.u_frame.value = -1;
 
-  // 🔽 テクスチャ画像を再ロード（768px未満と以上で切替）
+  // テクスチャ画像を再ロード（768px未満と以上で切替）
   const isMobile = window.innerWidth < 768;
   const imageSet = isMobile
     ? [
-        "./assets/img/hero/myimg_sp1.webp",
-        "./assets/img/hero/myimg_sp2.webp",
+        "./assets/img/hero/myimg_sp4.webp",
+        "./assets/img/hero/myimg_sp5.webp",
         "./assets/img/hero/myimg_sp3.webp",
       ]
     : [
-        "./assets/img/hero/myimg5.webp",
-        "./assets/img/hero/myimg7.webp",
-        "./assets/img/hero/myimg8.webp",
+        "./assets/img/hero/myimg1.webp",
+        "./assets/img/hero/myimg4.webp",
+        "./assets/img/hero/myimg2.webp",
       ];
 
   console.log("reload texture");
@@ -383,6 +297,6 @@ function render(delta) {
 
   uniforms.u_time.value = beta + delta * 0.0005;
   renderer.render(scene, camera);
-  //   console.log(`time ${uniforms.u_time.value}`);
+
   renderTexture();
 }
