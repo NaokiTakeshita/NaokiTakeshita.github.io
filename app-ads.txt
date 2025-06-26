@@ -7,3 +7,7 @@ pubmatic.com, 158357, RESELLER, 5d62403b186f2ace
 xandr.com, 8449, RESELLER
 video.unrulymedia.com, 5444561541445527220, RESELLER, 29bc7d05d309e1bc
 rhythmone.com, 5444561541445527220, RESELLER, a670c89d4a324e47
+
+
+fivecdm.com, 162274, RESELLER
+adcolony.com, 0a0f72cd66122f31, RESELLER, 1ad675c9de6b5176
