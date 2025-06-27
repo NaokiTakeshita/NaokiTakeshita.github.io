@@ -307,8 +307,16 @@ svg #LEAF-MEMO-EN {
 }
 
 .video {
-  max-width: 480px;
+  display: flex;
+  /* max-width: 480px; */
   margin: 0 auto;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+
+  * {
+    max-width: 480px;
+  }
 }
 
 .section-contact {
